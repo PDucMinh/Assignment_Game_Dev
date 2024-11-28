@@ -15,31 +15,31 @@ var _direction : Vector2
 func _ready():
 	pass # Replace with function body.
 
-func Init() -> void:
+func init() -> void:
 	pass
 
 ## What happens when the player enters this State?
-func Enter() -> void:
+func enter() -> void:
 	_timer = randi_range(state_cycles_min, state_cycles_max) * state_animation_duration
 	var rand = randi_range(0, 3)
 	_direction = enemy.DIR_4[rand]
 	enemy.velocity = _direction * wander_speed
-	enemy.SetDirection(_direction)
-	enemy.UpdateAnimation(animation_name)
+	enemy.set_direction(_direction)
+	enemy.update_animation(animation_name)
 	pass
 
 ## What happens when the player enters this State?
-func Exit() -> void:
+func exit() -> void:
 	pass
 
 ## What happens during the _process update in this State?
-func Process(_delta : float) -> EnemyState:
+func process(_delta : float) -> EnemyState:
 	_timer -= _delta
 	if _timer < 0:
 		return next_state
 	return null
 
 ## What happens during the _physics_process update in this State?
-func Physics(_delta : float) -> EnemyState:
+func physics(_delta : float) -> EnemyState:
 	return null
 

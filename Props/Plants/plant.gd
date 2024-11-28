@@ -6,8 +6,8 @@ class_name Plant extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$HitBox.Damaged.connect(take_damage)
-	RandomizePlantsPosition(30)
+	$HitBox.damaged.connect(take_damage)
+	randomize_plants_position(2)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,7 +15,7 @@ func _process(_delta):
 	pass
 
 # optimize?
-func RandomizePlantsPosition(number_plants : int) -> void:
+func randomize_plants_position(number_plants : int) -> void:
 	var limit_left = int(bounds[0].x)
 	var limit_top = int(bounds[0].y)
 	var limit_right = int(bounds[1].x)

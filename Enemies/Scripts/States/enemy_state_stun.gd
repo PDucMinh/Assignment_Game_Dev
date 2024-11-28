@@ -14,42 +14,42 @@ var _animation_finished : bool = false
 func _ready():
 	pass # Replace with function body.
 
-func Init() -> void:
-	enemy.enemy_damaged.connect(OnEnemyDamaged)
+func init() -> void:
+	enemy.enemy_damaged.connect(on_enemy_damaged)
 	pass
 
 ## What happens when the player enters this State?
-func Enter() -> void:
+func enter() -> void:
 	enemy.invulnerable = true
 	_animation_finished = false 
 	#var rand = randi_range(0, 3)
 	_direction = enemy.global_position.direction_to(_damage_position)
-	enemy.SetDirection(_direction)	
+	enemy.set_direction(_direction)	
 	enemy.velocity = _direction * -knockback_speed
-	enemy.UpdateAnimation(animation_name)
-	enemy.animation_player.animation_finished.connect(OnAnimationFinished)
+	enemy.update_animation(animation_name)
+	enemy.animation_player.animation_finished.connect(on_animation_finished)
 	pass
 
 ## What happens when the player enters this State?
-func Exit() -> void:
+func exit() -> void:
 	enemy.invulnerable = false
-	enemy.animation_player.animation_finished.disconnect(OnAnimationFinished)
+	enemy.animation_player.animation_finished.disconnect(on_animation_finished)
 	pass
 
 ## What happens during the _process update in this State?
-func Process(_delta : float) -> EnemyState:
+func process(_delta : float) -> EnemyState:
 	if _animation_finished == true:
 		return next_state
 	enemy.velocity -= enemy.velocity * decelerate_speed * _delta
 	return null
 
 ## What happens during the _physics_process update in this State?
-func Physics(_delta : float) -> EnemyState:
+func physics(_delta : float) -> EnemyState:
 	return null
 
-func OnEnemyDamaged(hurt_box: HurtBox) -> void:
+func on_enemy_damaged(hurt_box: HurtBox) -> void:
 	_damage_position = hurt_box.global_position
-	state_machine.ChangeState(self)
+	state_machine.change_state(self)
 
-func OnAnimationFinished(_a : String) -> void:
+func on_animation_finished(_a : String) -> void:
 	_animation_finished = true

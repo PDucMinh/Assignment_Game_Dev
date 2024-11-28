@@ -11,14 +11,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	ChangeState(current_state.Process( delta ))
+	change_state(current_state.process( delta ))
 	pass
 	
 func _physics_process(delta):
-	ChangeState(current_state.Physics( delta ))
+	change_state(current_state.physics( delta ))
 	pass
 
-func Initialize( _enemy : Enemy) -> void:
+func initialize( _enemy : Enemy) -> void:
 	states = []
 	for c in get_children():
 		if c is EnemyState:
@@ -27,18 +27,18 @@ func Initialize( _enemy : Enemy) -> void:
 	for s in states: 
 		s.enemy = _enemy
 		s.state_machine = self
-		s.Init()
+		s.init()
 	
 	if states.size() > 0:
-		ChangeState(states[0])
+		change_state(states[0])
 		process_mode = Node.PROCESS_MODE_INHERIT
 	pass
 
-func ChangeState(new_state : EnemyState) -> void:
+func change_state(new_state : EnemyState) -> void:
 	if (new_state == null || new_state == current_state): 
 		return
 	if current_state:
-		current_state.Exit()
+		current_state.exit()
 	previous_state = current_state
 	current_state = new_state
-	current_state.Enter()
+	current_state.enter()
