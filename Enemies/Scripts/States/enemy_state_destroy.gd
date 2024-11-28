@@ -6,7 +6,7 @@ class_name EnemyStateDestroy extends EnemyState
 
 @export_category("AI")
 
-
+var _damage_position : Vector2
 var _direction : Vector2
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,7 +20,7 @@ func Init() -> void:
 func Enter() -> void:
 	enemy.invulnerable = true
 	#var rand = randi_range(0, 3)
-	_direction = enemy.global_position.direction_to(enemy.player.global_position)
+	_direction = enemy.global_position.direction_to(_damage_position)
 	enemy.SetDirection(_direction)	
 	enemy.velocity = _direction * -knockback_speed
 	enemy.UpdateAnimation(animation_name)
@@ -39,7 +39,9 @@ func Process(_delta : float) -> EnemyState:
 ## What happens during the _physics_process update in this State?
 func Physics(_delta : float) -> EnemyState:
 	return null
-func OnEnemyDestroyed() -> void:
+	
+func OnEnemyDestroyed(hurt_box : HurtBox) -> void:
+	_damage_position = hurt_box.global_position
 	state_machine.ChangeState(self)
 
 func OnAnimationFinished(_a : String) -> void:

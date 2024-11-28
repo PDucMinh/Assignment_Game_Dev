@@ -7,6 +7,7 @@ class_name EnemyStateStun extends EnemyState
 @export_category("AI")
 @export var next_state : EnemyState
 
+var _damage_position : Vector2
 var _direction : Vector2
 var _animation_finished : bool = false
 # Called when the node enters the scene tree for the first time.
@@ -22,7 +23,7 @@ func Enter() -> void:
 	enemy.invulnerable = true
 	_animation_finished = false 
 	#var rand = randi_range(0, 3)
-	_direction = enemy.global_position.direction_to(enemy.player.global_position)
+	_direction = enemy.global_position.direction_to(_damage_position)
 	enemy.SetDirection(_direction)	
 	enemy.velocity = _direction * -knockback_speed
 	enemy.UpdateAnimation(animation_name)
@@ -46,7 +47,8 @@ func Process(_delta : float) -> EnemyState:
 func Physics(_delta : float) -> EnemyState:
 	return null
 
-func OnEnemyDamaged() -> void:
+func OnEnemyDamaged(hurt_box: HurtBox) -> void:
+	_damage_position = hurt_box.global_position
 	state_machine.ChangeState(self)
 
 func OnAnimationFinished(_a : String) -> void:

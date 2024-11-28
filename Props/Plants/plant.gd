@@ -6,7 +6,7 @@ class_name Plant extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$HitBox.Damaged.connect(TakeDamage)
+	$HitBox.Damaged.connect(take_damage)
 	RandomizePlantsPosition(30)
 	pass # Replace with function body.
 
@@ -27,6 +27,6 @@ func RandomizePlantsPosition(number_plants : int) -> void:
 		print("new_plant.position: ", new_plant.position)
 	pass
 
-func TakeDamage(_damage : int) -> void:
+func take_damage(_damage : int) -> void:
 	queue_free()
 	pass
