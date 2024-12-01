@@ -27,6 +27,6 @@ func randomize_plants_position(number_plants : int) -> void:
 		print("new_plant.position: ", new_plant.position)
 	pass
 
-func take_damage(_damage : int) -> void:
+func take_damage(_damage : HurtBox) -> void:
 	queue_free()
 	pass

@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://daatirm163ii5"]
+
+[ext_resource type="Script" path="res://npc/scripts/npc_patrol_location.gd" id="1_x0yrh"]
+
+[sub_resource type="Gradient" id="Gradient_ktvha"]
+offsets = PackedFloat32Array(0.52, 0.76, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xhf7a"]
+gradient = SubResource("Gradient_ktvha")
+width = 24
+height = 24
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.506098, 0)
+
+[node name="NpcPatrolLocation" type="Node2D"]
+show_behind_parent = true
+script = ExtResource("1_x0yrh")
+wait_time = 0.326
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.509804)
+texture = SubResource("GradientTexture2D_xhf7a")
+
+[node name="Line2D" type="Line2D" parent="Sprite2D"]
+points = PackedVector2Array(0, 0, 12, 0)
+width = 1.0
+default_color = Color(1, 1, 1, 0.67451)
+
+[node name="Label" type="Label" parent="Sprite2D"]
+anchors_preset = -1
+anchor_left = -0.333
+anchor_right = -0.333
+offset_left = -12.008
+offset_top = -12.0
+offset_right = 27.992
+offset_bottom = 11.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 4
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Sprite2D"]
+anchors_preset = -1
+anchor_left = -0.333
+anchor_right = -0.333
+offset_left = -12.008
+offset_top = 3.0
+offset_right = 27.992
+offset_bottom = 26.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 8
+text = "wait: 0.3s"
+horizontal_alignment = 1
+vertical_alignment = 1

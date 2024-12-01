@@ -8,7 +8,7 @@ class_name State_Idle extends State
 func _ready():
 	pass # Replace with function body.
 
-## What happens when the player enters this State?
+## What happens when the playerenters this State?
 func enter() -> void:
 	player.update_animation("idle")
 	pass
