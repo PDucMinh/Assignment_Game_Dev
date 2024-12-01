@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq8vbvw4tye8q"]
+
+[ext_resource type="Texture2D" uid="uid://css3eh06gy0f3" path="res://Props/Sprites/fence_version1.1.png" id="1_2mqtx"]
+
+[node name="Fence" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2mqtx")

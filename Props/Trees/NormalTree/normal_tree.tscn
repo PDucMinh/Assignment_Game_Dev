@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://de8wf5pmu7igv"]
+
+[ext_resource type="Texture2D" uid="uid://dnw0ipo6xrocj" path="res://Props/Sprites/assets_version1.1.png" id="1_cxpww"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h46gv"]
+radius = 13.0
+height = 60.0
+
+[node name="NormalTree" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -24)
+texture = ExtResource("1_cxpww")
+region_enabled = true
+region_rect = Rect2(64, 0, 64, 96)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_h46gv")

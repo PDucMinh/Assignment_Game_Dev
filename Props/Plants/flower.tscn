@@ -1,22 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpumudfcc8gty"]
+[gd_scene load_steps=5 format=3 uid="uid://bwo0syqr6pdgn"]
 
-[ext_resource type="Script" path="res://Props/Plants/plant.gd" id="1_n2dft"]
-[ext_resource type="PackedScene" uid="uid://dulyyqfaqv7e3" path="res://GeneralNodes/HitBox/hit_box.tscn" id="2_ntukh"]
-[ext_resource type="Texture2D" uid="uid://dnw0ipo6xrocj" path="res://Props/Sprites/assets_version1.1.png" id="2_sdprp"]
+[ext_resource type="Script" path="res://Props/Plants/plant.gd" id="1_rk6fa"]
+[ext_resource type="Texture2D" uid="uid://whh2grt38bqo" path="res://Props/Sprites/Decorationspre.png" id="2_publk"]
+[ext_resource type="PackedScene" uid="uid://dulyyqfaqv7e3" path="res://GeneralNodes/HitBox/hit_box.tscn" id="3_2wku1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1grnp"]
 size = Vector2(12, 12)
 
 [node name="Plant" type="Node2D"]
 position = Vector2(0, -6)
-script = ExtResource("1_n2dft")
+script = ExtResource("1_rk6fa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_sdprp")
-region_enabled = true
-region_rect = Rect2(0, 96, 32, 32)
+texture = ExtResource("2_publk")
+hframes = 3
+vframes = 6
 
-[node name="HitBox" parent="." instance=ExtResource("2_ntukh")]
+[node name="HitBox" parent="." instance=ExtResource("3_2wku1")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, 6)
