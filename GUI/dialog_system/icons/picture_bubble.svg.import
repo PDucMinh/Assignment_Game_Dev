@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0l1eslkws1ht"
-path="res://.godot/imported/chat_bubble.svg-a7e5a0530387ed2f4fe66a28d6680818.ctex"
+uid="uid://d0sunujy1p8i8"
+path="res://.godot/imported/picture_bubble.svg-ad3d88c49fdb3ebc770ec1ac9cafa293.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://npc/icons/chat_bubble.svg"
-dest_files=["res://.godot/imported/chat_bubble.svg-a7e5a0530387ed2f4fe66a28d6680818.ctex"]
+source_file="res://GUI/dialog_system/icons/picture_bubble.svg"
+dest_files=["res://.godot/imported/picture_bubble.svg-ad3d88c49fdb3ebc770ec1ac9cafa293.ctex"]
 
 [params]
 
