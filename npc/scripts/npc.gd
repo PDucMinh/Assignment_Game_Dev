@@ -15,10 +15,11 @@ var do_behavior : bool = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Setup NPC
-	do_behavior_enabled.emit()
 	setup_npc()
 	if Engine.is_editor_hint():
 		return
+	gather_interactables()
+	do_behavior_enabled.emit()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,6 +28,27 @@ func _process(_delta):
 
 func _physics_process(_delta : float) -> void:
 	move_and_slide()
+	pass
+
+func gather_interactables() -> void:
+	for c in get_children():
+		if c is DialogInteraction:
+			c.player_interacted.connect(_on_player_interacted)
+			c.finished.connect(_on_interaction_finished)
+
+func _on_player_interacted() -> void:
+	update_direction(PlayerManager.player.global_position)
+	state = "idle"
+	velocity = Vector2.ZERO
+	update_animation()
+	do_behavior = false
+	pass
+	
+func _on_interaction_finished() -> void:
+	state = "idle"
+	update_animation()
+	do_behavior = true
+	do_behavior_enabled.emit()
 	pass
 
 func update_animation() -> void:
