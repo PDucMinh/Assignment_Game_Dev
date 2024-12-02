@@ -1,0 +1,70 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://wnqbnymbyoyq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmrf4"]
+content_margin_left = 5.0
+content_margin_top = 4.0
+content_margin_right = 5.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.545098)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_etmt7"]
+content_margin_left = 5.0
+content_margin_top = 4.0
+content_margin_right = 5.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.545098)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hx8u3"]
+content_margin_left = 5.0
+content_margin_top = 4.0
+content_margin_right = 5.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.545098)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jd8ai"]
+content_margin_left = 5.0
+content_margin_top = 4.0
+content_margin_right = 5.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.313726)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ykx7"]
+content_margin_left = 5.0
+content_margin_top = 4.0
+content_margin_right = 5.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.870588)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+anti_aliasing = false
+
+[resource]
+Button/colors/font_color = Color(0.890196, 0.776471, 0.239216, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_fmrf4")
+Button/styles/focus = SubResource("StyleBoxFlat_etmt7")
+Button/styles/hover = SubResource("StyleBoxFlat_hx8u3")
+Button/styles/normal = SubResource("StyleBoxFlat_jd8ai")
+Button/styles/pressed = SubResource("StyleBoxFlat_3ykx7")
+VBoxContainer/constants/separation = 6

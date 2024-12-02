@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bxryt18i08xa5"]
+[gd_scene load_steps=17 format=3 uid="uid://bxryt18i08xa5"]
 
 [ext_resource type="Script" path="res://GUI/dialog_system/scripts/dialog_system.gd" id="1_lavu4"]
 [ext_resource type="Texture2D" uid="uid://d13grahjux625" path="res://GUI/dialog_system/sprites/text-bubble.png" id="2_lvrta"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://GUI/dialog_system/scripts/dialog_portrait.gd" id="6_efk25"]
 [ext_resource type="AudioStream" uid="uid://b3xfk53jaguwl" path="res://GUI/dialog_system/audio/voice_blip.wav" id="6_pbhcs"]
 [ext_resource type="FontFile" uid="uid://cn023tbn2v4e7" path="res://GUI/fonts/m5x7.ttf" id="6_subyy"]
+[ext_resource type="Theme" uid="uid://wnqbnymbyoyq" path="res://GUI/dialog_system/dialog_choice_theme.tres" id="9_gth0r"]
 
 [sub_resource type="Gradient" id="Gradient_vw31b"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -79,7 +80,7 @@ _data = {
 
 [node name="DialogSystem" type="CanvasLayer"]
 process_mode = 3
-layer = 0
+layer = 3
 script = ExtResource("1_lavu4")
 
 [node name="DialogUI" type="Control" parent="."]
@@ -178,3 +179,39 @@ libraries = {
 "": SubResource("AnimationLibrary_epq80")
 }
 autoplay = "default"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -114.5
+offset_right = 190.0
+offset_bottom = 1.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_gth0r")
+alignment = 1
+
+[node name="Button" type="Button" parent="DialogUI/VBoxContainer"]
+layout_mode = 2
+text = "Choice..."
+alignment = 0
+
+[node name="Button2" type="Button" parent="DialogUI/VBoxContainer"]
+layout_mode = 2
+text = "Choice..."
+alignment = 0
+
+[node name="Button3" type="Button" parent="DialogUI/VBoxContainer"]
+layout_mode = 2
+text = "Choice..."
+alignment = 0
+
+[node name="Button4" type="Button" parent="DialogUI/VBoxContainer"]
+layout_mode = 2
+text = "Choice..."
+alignment = 0

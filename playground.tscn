@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://duadauwn5r5gk"]
+[gd_scene load_steps=18 format=3 uid="uid://duadauwn5r5gk"]
 
 [ext_resource type="PackedScene" uid="uid://cscq572qhh3b8" path="res://Player/player.tscn" id="1_0ivqy"]
 [ext_resource type="PackedScene" uid="uid://c7hrxbfooupte" path="res://TileMaps/titleset.tscn" id="2_kv8ci"]
@@ -15,6 +15,8 @@
 [ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_text.gd" id="11_tl8so"]
 [ext_resource type="Resource" uid="uid://if14c2q18ny" path="res://npc/00_npcs/00_hero.tres" id="12_kl73x"]
 [ext_resource type="Resource" uid="uid://dqs0kj7n44qp1" path="res://npc/00_npcs/npc_02.tres" id="13_xxrm5"]
+[ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_choice.gd" id="16_267yw"]
+[ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_branch.gd" id="17_xxv4i"]
 
 [node name="Playground" type="Node2D"]
 y_sort_enabled = true
@@ -100,13 +102,6 @@ npc_info = ExtResource("8_mrgqh")
 [node name="Npc2" parent="." instance=ExtResource("5_4a4bp")]
 position = Vector2(-161, -303)
 
-[node name="DialogInteraction" parent="Npc2" instance=ExtResource("9_hh8o2")]
-
-[node name="DialogText" type="Node" parent="Npc2/DialogInteraction"]
-script = ExtResource("11_tl8so")
-text = "Haiz."
-npc_info = ExtResource("13_xxrm5")
-
 [node name="NpcBehaviorPatrol" parent="Npc2" instance=ExtResource("8_xt3x1")]
 
 [node name="NpcPatrolLocation5" parent="Npc2/NpcBehaviorPatrol" instance=ExtResource("9_v6pgs")]
@@ -128,3 +123,39 @@ wait_time = 2.0
 [node name="NpcPatrolLocation3" parent="Npc2/NpcBehaviorPatrol" instance=ExtResource("9_v6pgs")]
 modulate = Color(0, 0, 1, 1)
 position = Vector2(59.93, 47.999)
+
+[node name="DialogInteraction" parent="Npc2" instance=ExtResource("9_hh8o2")]
+
+[node name="DialogText" type="Node" parent="Npc2/DialogInteraction"]
+script = ExtResource("11_tl8so")
+text = "Haiz. This drought has been quite hard. Will you help me retrieve my magical flute?"
+npc_info = ExtResource("13_xxrm5")
+
+[node name="DialogChoice" type="Node" parent="Npc2/DialogInteraction"]
+script = ExtResource("16_267yw")
+npc_info = ExtResource("13_xxrm5")
+
+[node name="DialogBranch" type="Node" parent="Npc2/DialogInteraction/DialogChoice"]
+script = ExtResource("17_xxv4i")
+text = "Nah."
+npc_info = ExtResource("13_xxrm5")
+
+[node name="DialogText" type="Node" parent="Npc2/DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("11_tl8so")
+text = "Thank you good sire! You are a true specimen!"
+npc_info = ExtResource("13_xxrm5")
+
+[node name="DialogText2" type="Node" parent="Npc2/DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("11_tl8so")
+text = "Be careful of the evil spirits!"
+npc_info = ExtResource("13_xxrm5")
+
+[node name="DialogBranch2" type="Node" parent="Npc2/DialogInteraction/DialogChoice"]
+script = ExtResource("17_xxv4i")
+text = "Alright."
+npc_info = ExtResource("13_xxrm5")
+
+[node name="DialogText" type="Node" parent="Npc2/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("11_tl8so")
+text = "Some lousy individual you are."
+npc_info = ExtResource("13_xxrm5")

@@ -80,4 +80,6 @@ func setup_npc() -> void:
 func _set_npc_resource(_npc : NPCResource) -> void:
 	npc_resource = _npc
 	setup_npc()
+	
+# Bug with pause menu not fixed
 
