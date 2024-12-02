@@ -9,7 +9,7 @@ signal finished
 
 var dialog_items : Array [DialogItem] 
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
@@ -20,7 +20,6 @@ func _ready() -> void:
 	for c in get_children():
 		if c is DialogItem:
 			dialog_items.append(c)
-
 	pass # Replace with function body.
 
 func player_interact() -> void:
@@ -60,8 +59,7 @@ func _get_configuration_warnings() -> PackedStringArray:
 		return ["Requires at least 1 DialogItem node."]
 	else:
 		return []
-	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass

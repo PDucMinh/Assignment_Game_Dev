@@ -9,4 +9,4 @@ script = ExtResource("2_hfb22")
 npc_name = "Bojipo"
 sprite = ExtResource("3_cbguo")
 portrait = ExtResource("1_pkfx3")
-dialog_audio_pitch = ""
+dialog_audio_pitch = 1.1

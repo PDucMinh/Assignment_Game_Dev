@@ -1,10 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://bxryt18i08xa5"]
+[gd_scene load_steps=16 format=3 uid="uid://bxryt18i08xa5"]
 
 [ext_resource type="Script" path="res://GUI/dialog_system/scripts/dialog_system.gd" id="1_lavu4"]
 [ext_resource type="Texture2D" uid="uid://d13grahjux625" path="res://GUI/dialog_system/sprites/text-bubble.png" id="2_lvrta"]
 [ext_resource type="FontFile" uid="uid://d0kbjw407dxc1" path="res://GUI/fonts/Abaddon Light.ttf" id="3_gjrfb"]
 [ext_resource type="FontFile" uid="uid://c7nu11x8lmrt0" path="res://GUI/fonts/Abaddon Bold.ttf" id="4_7qvf3"]
 [ext_resource type="Texture2D" uid="uid://bwgnesxxp3lyj" path="res://npc/sprites/portraits/npc_portrait_01.png" id="5_gn2qo"]
+[ext_resource type="Script" path="res://GUI/dialog_system/scripts/dialog_portrait.gd" id="6_efk25"]
+[ext_resource type="AudioStream" uid="uid://b3xfk53jaguwl" path="res://GUI/dialog_system/audio/voice_blip.wav" id="6_pbhcs"]
 [ext_resource type="FontFile" uid="uid://cn023tbn2v4e7" path="res://GUI/fonts/m5x7.ttf" id="6_subyy"]
 
 [sub_resource type="Gradient" id="Gradient_vw31b"]
@@ -123,6 +125,8 @@ text = "Example [b]Text[/b] [i] Yay [/i]
 "
 fit_content = true
 scroll_active = false
+visible_characters = 2
+visible_ratio = 0.0425532
 
 [node name="NameLabel" type="Label" parent="DialogUI"]
 layout_mode = 0
@@ -140,14 +144,18 @@ theme_override_fonts/font = ExtResource("4_7qvf3")
 text = "Name"
 
 [node name="Timer" type="Timer" parent="DialogUI"]
+one_shot = true
 
 [node name="NpcPortrait01" type="Sprite2D" parent="DialogUI"]
 position = Vector2(60, 178)
 scale = Vector2(1.215, 1.215)
 texture = ExtResource("5_gn2qo")
 hframes = 4
+script = ExtResource("6_efk25")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="DialogUI"]
+stream = ExtResource("6_pbhcs")
+max_polyphony = 6
 
 [node name="DialogProgressIndicator" type="PanelContainer" parent="DialogUI"]
 self_modulate = Color(0.321569, 0.701961, 0, 1)
