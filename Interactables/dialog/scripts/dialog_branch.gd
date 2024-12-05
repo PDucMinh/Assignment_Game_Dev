@@ -42,6 +42,3 @@ func _set_text(value : String) -> void:
 		if example_dialog != null:
 			_set_editor_display()
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

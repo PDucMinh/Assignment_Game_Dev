@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dargqxyo33dsr"]
+[gd_scene load_steps=4 format=3 uid="uid://dargqxyo33dsr"]
 
 [ext_resource type="Texture2D" uid="uid://dnw0ipo6xrocj" path="res://Props/Sprites/assets_version1.1.png" id="1_fj6ak"]
+[ext_resource type="Script" path="res://Props/Trees/PineTree/pine_tree.gd" id="1_nb73t"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h46gv"]
 radius = 13.0
 height = 60.0
 
 [node name="PineTree" type="Node2D"]
+script = ExtResource("1_nb73t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -24)

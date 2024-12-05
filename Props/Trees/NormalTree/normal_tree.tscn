@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://de8wf5pmu7igv"]
+[gd_scene load_steps=4 format=3 uid="uid://de8wf5pmu7igv"]
 
+[ext_resource type="Script" path="res://Props/Trees/NormalTree/normal_tree.gd" id="1_0rvbl"]
 [ext_resource type="Texture2D" uid="uid://dnw0ipo6xrocj" path="res://Props/Sprites/assets_version1.1.png" id="1_cxpww"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h46gv"]
@@ -7,6 +8,7 @@ radius = 13.0
 height = 60.0
 
 [node name="NormalTree" type="Node2D"]
+script = ExtResource("1_0rvbl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -24)

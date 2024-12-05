@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("2_aw3r6")
-npc_name = "Guide"
+npc_name = "Algon"
 sprite = ExtResource("3_nvg2v")
 portrait = ExtResource("1_dnbte")
 dialog_audio_pitch = 1.5
