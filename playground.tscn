@@ -1,12 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://duadauwn5r5gk"]
+[gd_scene load_steps=7 format=3 uid="uid://duadauwn5r5gk"]
 
-[ext_resource type="PackedScene" uid="uid://cscq572qhh3b8" path="res://Player/player.tscn" id="1_0ivqy"]
+[ext_resource type="Script" path="res://Levels/scripts/level.gd" id="1_pq81u"]
 [ext_resource type="PackedScene" uid="uid://c7hrxbfooupte" path="res://TileMaps/titleset.tscn" id="2_kv8ci"]
 [ext_resource type="PackedScene" uid="uid://cpumudfcc8gty" path="res://Props/Plants/plant.tscn" id="3_jdtov"]
 [ext_resource type="PackedScene" uid="uid://bapxmmoc135k" path="res://Enemies/Slime/slime.tscn" id="4_cow2y"]
+[ext_resource type="PackedScene" uid="uid://b1tbtpge3mek8" path="res://Levels/player_spawn.tscn" id="4_xfotb"]
+[ext_resource type="PackedScene" uid="uid://cx4lvht3xrsw7" path="res://Levels/level_transition.tscn" id="6_kcijd"]
 
 [node name="Playground" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_pq81u")
 
 [node name="Titleset" parent="." instance=ExtResource("2_kv8ci")]
 position = Vector2(2, 0)
@@ -15,6 +18,12 @@ layer_0/tile_data = PackedInt32Array(196609, 65536, 1, 262145, 65536, 1, 327681,
 [node name="Plant" parent="." instance=ExtResource("3_jdtov")]
 position = Vector2(94, 69)
 
-[node name="Player" parent="." instance=ExtResource("1_0ivqy")]
-
 [node name="Slime" parent="." instance=ExtResource("4_cow2y")]
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("4_xfotb")]
+position = Vector2(-135, -13)
+
+[node name="LevelTransition" parent="." instance=ExtResource("6_kcijd")]
+position = Vector2(282, -703)
+level = "res://Levels/Area/area01.tscn"
+side = 1
