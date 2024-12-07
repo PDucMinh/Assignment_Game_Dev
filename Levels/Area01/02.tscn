@@ -93,7 +93,7 @@ npc_info = ExtResource("8_fbvcf")
 [node name="DialogText2" type="Node" parent="NPC/DialogInteraction"]
 script = ExtResource("11_ufet7")
 text = "
-I am [b][color=blue]Algo[/color][/b], your guide on this journey."
+[wave]I am [b][color=blue]Algo[/color][/b], your guide on this journey.[/wave]"
 npc_info = ExtResource("8_fbvcf")
 
 [node name="DialogText3" type="Node" parent="NPC/DialogInteraction"]
