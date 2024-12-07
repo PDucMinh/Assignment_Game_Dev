@@ -21,4 +21,5 @@ target_transition_area = "LevelTransition2"
 
 [node name="LevelTransition2" parent="." instance=ExtResource("4_1xeq8")]
 position = Vector2(-289, -961)
+target_transition_area = ""
 side = 2
