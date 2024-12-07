@@ -126,6 +126,16 @@ script = ExtResource("16_vb51d")
 text = "2"
 npc_info = ExtResource("9_3i3q5")
 
+[node name="DialogText2" type="Node" parent="NPC2/DialogInteraction/DialogChoice"]
+script = ExtResource("13_gn523")
+text = "Not quite. "
+npc_info = ExtResource("9_3i3q5")
+
+[node name="DialogText3" type="Node" parent="NPC2/DialogInteraction/DialogChoice"]
+script = ExtResource("13_gn523")
+text = "Remember, arrays in Algorithmia start at index 0, so the first element is at 0, the second at 1, and so on. Try again!"
+npc_info = ExtResource("9_3i3q5")
+
 [node name="DialogBranch2" type="Node" parent="NPC2/DialogInteraction/DialogChoice"]
 script = ExtResource("16_vb51d")
 text = "3"
