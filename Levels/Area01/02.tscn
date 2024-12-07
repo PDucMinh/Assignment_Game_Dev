@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=4 uid="uid://chcb2oelfl72f"]
 
 [ext_resource type="Script" path="res://Levels/scripts/level.gd" id="1_1ohot"]
-[ext_resource type="AudioStream" uid="uid://io7jxqk648xa" path="res://Levels/music/example_music_01.ogg" id="2_5s7x6"]
+[ext_resource type="AudioStream" uid="uid://cm6mpfilhjqa" path="res://Levels/music/A_walk_on_the_leaves_mp3format.mp3" id="2_r7dhp"]
 [ext_resource type="PackedScene" uid="uid://cq32mohonpsw3" path="res://Tile Maps/grass-tiles-01.tscn" id="3_ukscd"]
 [ext_resource type="PackedScene" uid="uid://dr4blo7ya448q" path="res://Levels/player_spawn.tscn" id="4_1fp1i"]
 [ext_resource type="PackedScene" uid="uid://d4igjv570x7c4" path="res://Props/Plants/plant.tscn" id="5_wa4h8"]
@@ -22,7 +22,7 @@
 [node name="02" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_1ohot")
-music = ExtResource("2_5s7x6")
+music = ExtResource("2_r7dhp")
 
 [node name="grass-tiles-01" parent="." instance=ExtResource("3_ukscd")]
 tile_map_data = PackedByteArray("AAD9//7/AAACAAQAAAD9////AAACAAUAAAD9/wAAAAACAAYAAAD9/wEAAAANAAQAAAD9/wIAAAANAAUAAAD9/wMAAAANAAUAAAD9/wQAAAANAAUAAAD9/wUAAAANAAUAAAD9/wYAAAANAAUAAAD9/wcAAAANAAUAAAD9/wgAAAANAAUAAAD9/wkAAAANAAUAAAD+//7/AAADAAQAAAD+////AAADAAUAAAD+/wAAAAADAAYAAAD+/wEAAAAOAAQAAAD+/wIAAAAOAAUAAAD+/wMAAAAOAAUAAAD+/wQAAAAOAAUAAAD+/wUAAAAOAAUAAAD+/wYAAAAOAAUAAAD+/wcAAAAOAAUAAAD+/wgAAAAOAAUAAAD+/wkAAAAOAAUAAAD///7/AAAEAAQAAAD/////AAAEAAUAAAD//wAAAAAEAAYAAAD//wEAAAACAAAAAAD//wIAAAACAAAAAAD//wMAAAACAAAAAAD//wQAAAACAAAAAAD//wUAAAACAAAAAAD//wYAAAACAAAAAAD//wcAAAAFAAAAAAD//wgAAAAEAAIAAAD//wkAAAAKAAQAAAAAAP7/AAAEAAQAAAAAAP//AAAEAAUAAAAAAAAAAAAEAAYAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAEAAAAAAAAAAYAAAAFAAEAAAAAAAcAAAAHAAIAAAAAAAgAAAAAAAAAAAAAAAkAAAAMAAQAAAABAP7/AAACAAQAAAABAP//AAACAAUAAAABAAAAAAACAAYAAAABAAEAAAABAAAAAAABAAIAAAABAAAAAAABAAMAAAABAAAAAAABAAQAAAABAAAAAAABAAUAAAABAAAAAAABAAYAAAAHAAMAAAABAAcAAAABAAAAAAABAAgAAAABAAAAAAABAAkAAAANAAQAAAACAP7/AAADAAQAAAACAP//AAADAAUAAAACAAAAAAADAAYAAAACAAEAAAACAAAAAAACAAIAAAACAAAAAAACAAMAAAACAAAAAAACAAQAAAACAAAAAAACAAUAAAACAAAAAAACAAYAAAACAAAAAAACAAcAAAACAAAAAAACAAgAAAACAAAAAAACAAkAAAALAAQAAAADAP7/AAAEAAQAAAADAP//AAAEAAUAAAADAAAAAAAEAAYAAAADAAEAAAADAAAAAAADAAIAAAADAAAAAAADAAMAAAADAAAAAAADAAQAAAAEAAMAAAADAAUAAAADAAAAAAADAAYAAAADAAAAAAADAAcAAAADAAAAAAADAAgAAAADAAAAAAADAAkAAAAMAAQAAAAEAP7/AAACAAQAAAAEAP//AAADAAUAAAAEAAAAAAANAAcAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAAAAAAEAAYAAAAEAAMAAAAEAAcAAAAAAAAAAAAEAAgAAAAAAAAAAAAEAAkAAAANAAQAAAAFAP7/AAAOAAYAAAAFAP//AAAJAAcAAAAFAAAAAAAOAAcAAAAFAAEAAAABAAAAAAAFAAIAAAABAAAAAAAFAAMAAAABAAAAAAAFAAQAAAABAAAAAAAFAAUAAAABAAAAAAAFAAYAAAABAAAAAAAFAAcAAAABAAAAAAAFAAgAAAABAAAAAAAFAAkAAAALAAQAAAAGAP7/AAAMAAAAAAAGAP//AAAMAAEAAAAGAAAAAAAMAAEAAAAGAAEAAAAMAAMAAAAGAAIAAAACAAAAAAAGAAMAAAACAAAAAAAGAAQAAAACAAAAAAAGAAUAAAACAAAAAAAGAAYAAAACAAAAAAAGAAcAAAACAAAAAAAGAAgAAAACAAAAAAAGAAkAAAAMAAQAAAAHAP7/AAAPAAAAAAAHAP//AAAPAAIAAAAHAAAAAAAPAAIAAAAHAAEAAAALAAIAAAAHAAIAAAAEAAEAAAAHAAMAAAAFAAIAAAAHAAQAAAADAAAAAAAHAAUAAAADAAAAAAAHAAYAAAADAAAAAAAHAAcAAAADAAAAAAAHAAgAAAADAAAAAAAHAAkAAAANAAQAAAAIAP7/AAAKAAYAAAAIAP//AAAJAAYAAAAIAAAAAAAKAAcAAAAIAAEAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAHAAAAAAAIAAQAAAAIAAEAAAAIAAUAAAAMAAMAAAAIAAYAAAAAAAAAAAAIAAcAAAAAAAAAAAAIAAgAAAAAAAAAAAAIAAkAAAALAAQAAAAJAP7/AAAEAAQAAAAJAP//AAAEAAUAAAAJAAAAAAALAAcAAAAJAAEAAAABAAAAAAAJAAIAAAABAAAAAAAJAAMAAAABAAAAAAAJAAQAAAAKAAAAAAAJAAUAAAALAAIAAAAJAAYAAAAFAAIAAAAJAAcAAAABAAAAAAAJAAgAAAABAAAAAAAJAAkAAAAMAAQAAAAKAP7/AAACAAQAAAAKAP//AAACAAUAAAAKAAAAAAACAAYAAAAKAAEAAAACAAAAAAAKAAIAAAAFAAMAAAAKAAMAAAACAAAAAAAKAAQAAAAHAAMAAAAKAAUAAAACAAAAAAAKAAYAAAAGAAMAAAAKAAcAAAACAAAAAAAKAAgAAAACAAAAAAAKAAkAAAANAAQAAAALAP7/AAADAAQAAAALAP//AAADAAUAAAALAAAAAAADAAYAAAALAAEAAAADAAAAAAALAAIAAAAGAAMAAAALAAMAAAADAAAAAAALAAQAAAADAAAAAAALAAUAAAADAAAAAAALAAYAAAAGAAMAAAALAAcAAAADAAAAAAALAAgAAAADAAAAAAALAAkAAAALAAQAAAAMAP7/AAAEAAQAAAAMAP//AAAEAAUAAAAMAAAAAAAEAAYAAAAMAAEAAAAAAAAAAAAMAAIAAAAHAAAAAAAMAAMAAAAEAAEAAAAMAAQAAAAEAAIAAAAMAAUAAAAAAAAAAAAMAAYAAAAHAAMAAAAMAAcAAAAAAAAAAAAMAAgAAAAAAAAAAAAMAAkAAAAMAAQAAAANAP7/AAACAAQAAAANAP//AAACAAUAAAANAAAAAAACAAYAAAANAAEAAAABAAAAAAANAAIAAAABAAAAAAANAAMAAAABAAAAAAANAAQAAAABAAAAAAANAAUAAAABAAAAAAANAAYAAAABAAAAAAANAAcAAAABAAAAAAANAAgAAAABAAAAAAANAAkAAAAOAAQAAAAOAP7/AAADAAQAAAAOAP//AAADAAUAAAAOAAAAAAADAAYAAAAOAAEAAAAKAAQAAAAOAAIAAAAKAAUAAAAOAAMAAAAKAAUAAAAOAAQAAAAKAAUAAAAOAAUAAAAKAAUAAAAOAAYAAAAKAAUAAAAOAAcAAAAKAAUAAAAOAAgAAAAKAAUAAAAOAAkAAAAKAAUAAAAPAP7/AAAEAAQAAAAPAP//AAAEAAUAAAAPAAAAAAAEAAYAAAAPAAEAAAALAAQAAAAPAAIAAAALAAUAAAAPAAMAAAALAAUAAAAPAAQAAAALAAUAAAAPAAUAAAALAAUAAAAPAAYAAAALAAUAAAAPAAcAAAALAAUAAAAPAAgAAAALAAUAAAAPAAkAAAALAAUAAAA=")
@@ -63,20 +63,107 @@ npc_resource = ExtResource("8_fbvcf")
 
 [node name="DialogText" type="Node" parent="NPC/DialogInteraction"]
 script = ExtResource("11_ufet7")
-text = "
-Hi, [b]Hero[/b] is that you?"
+text = "Awake at last, I see! Welcome, young coder, to [b][color=red]Algorithmia—the land of computational wonder.[/color][/b] "
 npc_info = ExtResource("8_fbvcf")
 
 [node name="DialogText2" type="Node" parent="NPC/DialogInteraction"]
 script = ExtResource("11_ufet7")
 text = "
-[wave]Heck yeah it's me![/wave]"
-npc_info = ExtResource("12_2ebyk")
+I am [b][color=blue]Algo[/color][/b], your guide on this journey."
+npc_info = ExtResource("8_fbvcf")
 
 [node name="DialogText3" type="Node" parent="NPC/DialogInteraction"]
 script = ExtResource("11_ufet7")
-text = "Nice bro!
-Happy to have a hero!"
+text = "Algorithmia? What happened? How did I get here?"
+npc_info = ExtResource("12_2ebyk")
+
+[node name="DialogText4" type="Node" parent="NPC/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "You've been summoned by the Keeper of Logic to save our land. A terrible entity called [b][wave]The Glitch[/wave][/b] is wreaking havoc, corrupting our homes."
+npc_info = ExtResource("8_fbvcf")
+
+[node name="DialogText5" type="Node" parent="NPC/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "Corrupted structures? That sounds... bad. What am I supposed to do?"
+npc_info = ExtResource("12_2ebyk")
+
+[node name="DialogText6" type="Node" parent="NPC/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "You, my friend, are the chosen Debugger!"
+npc_info = ExtResource("8_fbvcf")
+
+[node name="DialogText7" type="Node" parent="NPC/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "Your task is to journey through Algorithmia, restoring its data structures and collecting the fragments of the Great Algorithm. "
+npc_info = ExtResource("8_fbvcf")
+
+[node name="DialogText8" type="Node" parent="NPC/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "Each region holds its own secrets and challenges."
+npc_info = ExtResource("8_fbvcf")
+
+[node name="DialogText9" type="Node" parent="NPC/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "How do I restore these data structures? Do I just fight things?"
+npc_info = ExtResource("12_2ebyk")
+
+[node name="DialogText10" type="Node" parent="NPC/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "Partly, yes. But battles alone won’t suffice. Knowledge is power here. "
+npc_info = ExtResource("8_fbvcf")
+
+[node name="DialogText11" type="Node" parent="NPC/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "You'll meet wise inhabitants who will test your understanding of data structures and algorithms."
+npc_info = ExtResource("8_fbvcf")
+
+[node name="DialogText12" type="Node" parent="NPC/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "Pass their quizzes to earn tools and power-ups!"
+npc_info = ExtResource("8_fbvcf")
+
+[node name="DialogText13" type="Node" parent="NPC/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "So… quizzes, battles, and fixing things. Got it. Where do I start?"
+npc_info = ExtResource("12_2ebyk")
+
+[node name="DialogText14" type="Node" parent="NPC/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "First, we must prepare you for the journey. Let me ask you something simple to warm up:"
+npc_info = ExtResource("8_fbvcf")
+
+[node name="DialogText15" type="Node" parent="NPC/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "[b]'What is the depth of a binary tree with only a root node?' [/b] Choose your answer carefully."
+npc_info = ExtResource("8_fbvcf")
+
+[node name="DialogChoice" type="Node" parent="NPC/DialogInteraction"]
+script = ExtResource("16_as0ht")
+npc_info = ExtResource("8_fbvcf")
+
+[node name="DialogBranch" type="Node" parent="NPC/DialogInteraction/DialogChoice"]
+script = ExtResource("17_lam8a")
+text = "1"
+npc_info = ExtResource("8_fbvcf")
+
+[node name="DialogText" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("11_ufet7")
+text = "Excellent! You’re a fast learner. Let’s proceed. "
+npc_info = ExtResource("8_fbvcf")
+
+[node name="DialogText2" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("11_ufet7")
+text = " Follow me—our first stop is the Binary Blossom Grove. "
+npc_info = ExtResource("8_fbvcf")
+
+[node name="DialogBranch2" type="Node" parent="NPC/DialogInteraction/DialogChoice"]
+script = ExtResource("17_lam8a")
+text = "0"
+npc_info = ExtResource("8_fbvcf")
+
+[node name="DialogText" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("11_ufet7")
+text = "Seriously?"
 npc_info = ExtResource("8_fbvcf")
 
 [node name="NPC2" parent="." instance=ExtResource("7_62xuh")]
@@ -106,9 +193,67 @@ position = Vector2(-74, 0)
 
 [node name="DialogText" type="Node" parent="NPC2/DialogInteraction"]
 script = ExtResource("11_ufet7")
-text = "Yo! Hero! Will you help retreive my
-magical flute from the dark dungeon?
-Please, pretty please?"
+text = "One-zero-one-zero... ah! No, no, no, that’s not balanced... where did I put that extra bit?
+
+"
+npc_info = ExtResource("8_yuemd")
+
+[node name="DialogText2" type="Node" parent="NPC2/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "Uh... hello? Are you okay over there?
+"
+npc_info = ExtResource("12_2ebyk")
+
+[node name="DialogText3" type="Node" parent="NPC2/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "Oh! A traveler! Greetings, fellow data-wrangler! I am Binarist, the humble keeper of binary truths. 
+
+"
+npc_info = ExtResource("8_yuemd")
+
+[node name="DialogText4" type="Node" parent="NPC2/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "What brings you to my grove of glorious ones and zeroes?
+"
+npc_info = ExtResource("8_yuemd")
+
+[node name="DialogText5" type="Node" parent="NPC2/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "I’m just trying to figure out how to stop some Glitch thing from destroying Algorithmia.
+
+"
+npc_info = ExtResource("12_2ebyk")
+
+[node name="DialogText6" type="Node" parent="NPC2/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "The Glitch, you say? A vile disruptor of balance! You’ll need sharp logic to defeat it.
+
+
+"
+npc_info = ExtResource("8_yuemd")
+
+[node name="DialogText7" type="Node" parent="NPC2/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "I’ll keep that in mind. By the way, what are you working on?
+"
+npc_info = ExtResource("12_2ebyk")
+
+[node name="DialogText8" type="Node" parent="NPC2/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "Oh, just a little contraption I call the Binary Balancer 3000. It ensures my binary trees are perfectly balanced... as all things should be.
+
+"
+npc_info = ExtResource("8_yuemd")
+
+[node name="DialogText9" type="Node" parent="NPC2/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "Sounds... useful?"
+npc_info = ExtResource("12_2ebyk")
+
+[node name="DialogText10" type="Node" parent="NPC2/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "Useful?! It’s a marvel of engineering! Say, [b]do you know what makes a binary tree balanced[/b]?!
+"
 npc_info = ExtResource("8_yuemd")
 
 [node name="DialogChoice" type="Node" parent="NPC2/DialogInteraction"]
@@ -117,27 +262,27 @@ npc_info = ExtResource("8_yuemd")
 
 [node name="DialogBranch" type="Node" parent="NPC2/DialogInteraction/DialogChoice"]
 script = ExtResource("17_lam8a")
-text = "You can count on it!"
+text = "Left and right heights differ by ≤ 1."
 npc_info = ExtResource("8_yuemd")
 
 [node name="DialogText" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("11_ufet7")
-text = "Thank you dear hero! You are a true specimen!"
+text = "Brilliant! You’ve got the mind of a true binary artisan. Remember, balance is key in all things."
 npc_info = ExtResource("8_yuemd")
 
 [node name="DialogText2" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("11_ufet7")
-text = "Oh, and be careful of the evil wizard who lurks in the dungeon!"
+text = "Now, off you go! The Glitch awaits, and I have ones and zeroes to juggle!"
 npc_info = ExtResource("8_yuemd")
 
 [node name="DialogBranch2" type="Node" parent="NPC2/DialogInteraction/DialogChoice"]
 script = ExtResource("17_lam8a")
-text = "NO! You're crazy bananas!"
+text = "It has only one node."
 npc_info = ExtResource("8_yuemd")
 
 [node name="DialogText" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("11_ufet7")
-text = "Geez! Some lousy hero you are...."
+text = "Geez! It's not a correct answer!"
 npc_info = ExtResource("8_yuemd")
 
 [node name="Pot" parent="." instance=ExtResource("18_gcr0t")]

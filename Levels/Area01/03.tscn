@@ -1,16 +1,26 @@
-[gd_scene load_steps=7 format=4 uid="uid://di637arhv02o2"]
+[gd_scene load_steps=17 format=4 uid="uid://di637arhv02o2"]
 
 [ext_resource type="Script" path="res://Levels/scripts/level.gd" id="1_bspbj"]
-[ext_resource type="AudioStream" uid="uid://io7jxqk648xa" path="res://Levels/music/example_music_01.ogg" id="2_wavkr"]
+[ext_resource type="AudioStream" uid="uid://b1mnvbh60hgp6" path="res://Levels/music/Summer_rain_on_the_paddy_fields_new.mp3" id="2_bbssr"]
 [ext_resource type="PackedScene" uid="uid://cq32mohonpsw3" path="res://Tile Maps/grass-tiles-01.tscn" id="3_hd7c7"]
 [ext_resource type="PackedScene" uid="uid://dr4blo7ya448q" path="res://Levels/player_spawn.tscn" id="4_j7hqw"]
 [ext_resource type="PackedScene" uid="uid://b7x3cvq6i0qvf" path="res://Enemies/Slime/slime.tscn" id="5_6j82e"]
 [ext_resource type="PackedScene" uid="uid://vlpiuopcomwi" path="res://Levels/level_transition.tscn" id="5_40pm8"]
+[ext_resource type="PackedScene" uid="uid://bxnynmne8hsl2" path="res://Enemies/goblin/goblin.tscn" id="7_ev255"]
+[ext_resource type="PackedScene" uid="uid://bi8crg3nv50qw" path="res://npc/npc.tscn" id="8_yws2g"]
+[ext_resource type="Resource" uid="uid://bqfxxks18ou8u" path="res://npc/00_npcs/npc_02.tres" id="9_3i3q5"]
+[ext_resource type="PackedScene" uid="uid://dpenv0euqqlkg" path="res://npc/npc_behavior_patrol.tscn" id="10_vsl6d"]
+[ext_resource type="PackedScene" uid="uid://dyhn3j7qk4dqw" path="res://npc/patrol_location.tscn" id="11_420np"]
+[ext_resource type="PackedScene" uid="uid://b22o8rtjyby8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="12_mjp7n"]
+[ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_text.gd" id="13_gn523"]
+[ext_resource type="Resource" uid="uid://cdc3sykvmnn27" path="res://npc/00_npcs/00_hero.tres" id="14_lo5yp"]
+[ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_choice.gd" id="15_wpcrq"]
+[ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_branch.gd" id="16_vb51d"]
 
 [node name="03" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_bspbj")
-music = ExtResource("2_wavkr")
+music = ExtResource("2_bbssr")
 
 [node name="grass-tiles-01" parent="." instance=ExtResource("3_hd7c7")]
 tile_map_data = PackedByteArray("AAAAAP//AAACAAUAAAAAAAAAAAACAAYAAAAAAAEAAAANAAQAAAAAAAIAAAANAAYAAAAAAAMAAAANAAcAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAYAAAABAAIAAAAAAAcAAAANAAQAAAAAAAgAAAANAAUAAAABAP//AAADAAUAAAABAAAAAAADAAYAAAABAAEAAAAOAAQAAAABAAIAAAAOAAYAAAABAAMAAAAOAAcAAAABAAQAAAABAAAAAAABAAUAAAABAAAAAAABAAYAAAABAAIAAAABAAcAAAAOAAQAAAABAAgAAAAOAAUAAAACAP//AAAEAAUAAAACAAAAAAAEAAYAAAACAAEAAAACAAAAAAACAAIAAAACAAAAAAACAAMAAAACAAAAAAACAAQAAAACAAAAAAACAAUAAAACAAAAAAACAAYAAAACAAAAAAACAAcAAAACAAAAAAACAAgAAAAKAAQAAAADAP//AAACAAUAAAADAAAAAAACAAYAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAADAAUAAAAAAAAAAAADAAYAAAAAAAAAAAADAAcAAAAAAAAAAAADAAgAAAALAAQAAAAEAP//AAADAAUAAAAEAAAAAAADAAYAAAAEAAEAAAABAAAAAAAEAAIAAAABAAAAAAAEAAMAAAABAAAAAAAEAAQAAAABAAAAAAAEAAUAAAACAAEAAAAEAAYAAAABAAAAAAAEAAcAAAABAAAAAAAEAAgAAAAMAAQAAAAFAP//AAAEAAUAAAAFAAAAAAAEAAYAAAAFAAEAAAACAAAAAAAFAAIAAAACAAAAAAAFAAMAAAACAAAAAAAFAAQAAAACAAAAAAAFAAUAAAACAAAAAAAFAAYAAAACAAAAAAAFAAcAAAACAAAAAAAFAAgAAAANAAQAAAAGAP//AAACAAUAAAAGAAAAAAACAAYAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAQAAAAAAAAAAAAGAAUAAAAAAAAAAAAGAAYAAAAAAAAAAAAGAAcAAAAAAAAAAAAGAAgAAAALAAQAAAAHAP//AAADAAUAAAAHAAAAAAADAAYAAAAHAAEAAAABAAAAAAAHAAIAAAABAAAAAAAHAAMAAAABAAAAAAAHAAQAAAABAAAAAAAHAAUAAAABAAAAAAAHAAYAAAABAAAAAAAHAAcAAAABAAAAAAAHAAgAAAAMAAQAAAAIAP//AAAEAAUAAAAIAAAAAAAEAAYAAAAIAAEAAAACAAAAAAAIAAIAAAACAAAAAAAIAAMAAAACAAAAAAAIAAQAAAACAAAAAAAIAAUAAAACAAAAAAAIAAYAAAACAAAAAAAIAAcAAAACAAAAAAAIAAgAAAANAAQAAAAJAP//AAACAAUAAAAJAAAAAAACAAYAAAAJAAEAAAAAAAAAAAAJAAIAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAUAAAAAAAAAAAAJAAYAAAAAAAAAAAAJAAcAAAAAAAAAAAAJAAgAAAALAAQAAAAKAP//AAADAAUAAAAKAAAAAAADAAYAAAAKAAEAAAABAAAAAAAKAAIAAAABAAAAAAAKAAMAAAABAAAAAAAKAAQAAAABAAAAAAAKAAUAAAABAAAAAAAKAAYAAAABAAAAAAAKAAcAAAABAAAAAAAKAAgAAAAMAAQAAAALAP//AAAEAAUAAAALAAAAAAAEAAYAAAALAAEAAAACAAAAAAALAAIAAAACAAAAAAALAAMAAAACAAAAAAALAAQAAAACAAAAAAALAAUAAAACAAAAAAALAAYAAAACAAAAAAALAAcAAAACAAAAAAALAAgAAAANAAQAAAAMAP//AAACAAUAAAAMAAAAAAACAAYAAAAMAAEAAAAAAAAAAAAMAAIAAAAAAAAAAAAMAAMAAAAAAAAAAAAMAAQAAAAAAAAAAAAMAAUAAAAAAAAAAAAMAAYAAAAAAAAAAAAMAAcAAAAAAAAAAAAMAAgAAAALAAQAAAANAP//AAADAAUAAAANAAAAAAADAAYAAAANAAEAAAABAAAAAAANAAIAAAABAAAAAAANAAMAAAABAAAAAAANAAQAAAABAAAAAAANAAUAAAABAAAAAAANAAYAAAABAAAAAAANAAcAAAABAAAAAAANAAgAAAAMAAQAAAAOAP//AAAEAAUAAAAOAAAAAAAEAAYAAAAOAAEAAAACAAAAAAAOAAIAAAACAAAAAAAOAAMAAAACAAAAAAAOAAQAAAACAAAAAAAOAAUAAAACAAAAAAAOAAYAAAACAAAAAAAOAAcAAAACAAAAAAAOAAgAAAANAAQAAAAPAP//AAACAAUAAAAPAAAAAAACAAYAAAAPAAEAAAAAAAAAAAAPAAIAAAAAAAAAAAAPAAMAAAAAAAAAAAAPAAQAAAAAAAAAAAAPAAUAAAAAAAAAAAAPAAYAAAAAAAAAAAAPAAcAAAAAAAAAAAAPAAgAAAALAAQAAAAQAP//AAADAAUAAAAQAAAAAAADAAYAAAAQAAEAAAAKAAQAAAAQAAIAAAAKAAUAAAAQAAMAAAAKAAUAAAAQAAQAAAAKAAUAAAAQAAUAAAAKAAUAAAAQAAYAAAAKAAYAAAAQAAcAAAAKAAcAAAAQAAgAAAAMAAQAAAA=")
@@ -19,7 +29,7 @@ tile_map_data = PackedByteArray("AAAAAP//AAACAAUAAAAAAAAAAAACAAYAAAAAAAEAAAANAAQ
 position = Vector2(303, 163)
 
 [node name="Slime" parent="." instance=ExtResource("5_6j82e")]
-position = Vector2(423, 96)
+position = Vector2(449, 71)
 
 [node name="Slime2" parent="." instance=ExtResource("5_6j82e")]
 position = Vector2(267, 245)
@@ -32,3 +42,116 @@ position = Vector2(0, 176)
 level = "res://Levels/Area01/01.tscn"
 target_transition_area = "LevelTransition2"
 size = 3
+
+[node name="Goblin" parent="." instance=ExtResource("7_ev255")]
+position = Vector2(350, 96)
+hp = 1
+
+[node name="Goblin2" parent="." instance=ExtResource("7_ev255")]
+position = Vector2(399, 75)
+hp = 1
+
+[node name="Goblin3" parent="." instance=ExtResource("7_ev255")]
+position = Vector2(461, 128)
+hp = 1
+
+[node name="Goblin4" parent="." instance=ExtResource("7_ev255")]
+position = Vector2(407, 126)
+hp = 1
+
+[node name="NPC2" parent="." instance=ExtResource("8_yws2g")]
+position = Vector2(303.941, 144)
+npc_resource = ExtResource("9_3i3q5")
+
+[node name="NpcBehaviorPatrol" parent="NPC2" instance=ExtResource("10_vsl6d")]
+
+[node name="PatrolLocation" parent="NPC2/NpcBehaviorPatrol" instance=ExtResource("11_420np")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(64, 0)
+
+[node name="PatrolLocation2" parent="NPC2/NpcBehaviorPatrol" instance=ExtResource("11_420np")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(162.059, 80)
+
+[node name="PatrolLocation3" parent="NPC2/NpcBehaviorPatrol" instance=ExtResource("11_420np")]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(19.059, 90)
+wait_time = 1.0
+
+[node name="PatrolLocation4" parent="NPC2/NpcBehaviorPatrol" instance=ExtResource("11_420np")]
+modulate = Color(0, 1, 1, 1)
+position = Vector2(-39.941, 50)
+
+[node name="DialogInteraction" parent="NPC2" instance=ExtResource("12_mjp7n")]
+
+[node name="DialogText" type="Node" parent="NPC2/DialogInteraction"]
+script = ExtResource("13_gn523")
+text = "Hey there, Debugger! Over here, quick! This area is crawling with corrupted code monsters."
+npc_info = ExtResource("9_3i3q5")
+
+[node name="DialogText2" type="Node" parent="NPC2/DialogInteraction"]
+script = ExtResource("13_gn523")
+text = " I’ve been studying them, trying to figure out how to fix this. But… I could really use your help.
+
+"
+npc_info = ExtResource("9_3i3q5")
+
+[node name="DialogText3" type="Node" parent="NPC2/DialogInteraction"]
+script = ExtResource("13_gn523")
+text = "What do you need me to do?"
+npc_info = ExtResource("14_lo5yp")
+
+[node name="DialogText4" type="Node" parent="NPC2/DialogInteraction"]
+script = ExtResource("13_gn523")
+text = "Well, the monsters seem to have a weakness to logic puzzles. "
+npc_info = ExtResource("9_3i3q5")
+
+[node name="DialogText5" type="Node" parent="NPC2/DialogInteraction"]
+script = ExtResource("13_gn523")
+text = "If you can solve this problem, we might scare them off! Here’s the question:
+"
+npc_info = ExtResource("9_3i3q5")
+
+[node name="DialogText8" type="Node" parent="NPC2/DialogInteraction"]
+script = ExtResource("13_gn523")
+text = "Given the array [b] [3, 7, 2, 5, 10, 6] [/b], what is the index of the largest number?"
+npc_info = ExtResource("9_3i3q5")
+
+[node name="DialogChoice" type="Node" parent="NPC2/DialogInteraction"]
+script = ExtResource("15_wpcrq")
+npc_info = ExtResource("9_3i3q5")
+
+[node name="DialogBranch" type="Node" parent="NPC2/DialogInteraction/DialogChoice"]
+script = ExtResource("16_vb51d")
+text = "2"
+npc_info = ExtResource("9_3i3q5")
+
+[node name="DialogBranch2" type="Node" parent="NPC2/DialogInteraction/DialogChoice"]
+script = ExtResource("16_vb51d")
+text = "3"
+npc_info = ExtResource("9_3i3q5")
+
+[node name="DialogText2" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("13_gn523")
+text = "Not quite. "
+npc_info = ExtResource("9_3i3q5")
+
+[node name="DialogText3" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("13_gn523")
+text = "Remember, arrays in Algorithmia start at index 0, so the first element is at 0, the second at 1, and so on. Try again!"
+npc_info = ExtResource("9_3i3q5")
+
+[node name="DialogBranch3" type="Node" parent="NPC2/DialogInteraction/DialogChoice"]
+script = ExtResource("16_vb51d")
+text = "4"
+npc_info = ExtResource("9_3i3q5")
+
+[node name="DialogText" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch3"]
+script = ExtResource("13_gn523")
+text = "Yes! The largest number is 10, and it’s at index 4. Great job!"
+npc_info = ExtResource("9_3i3q5")
+
+[node name="DialogText2" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch3"]
+script = ExtResource("13_gn523")
+text = "Now, off you go! The Glitch awaits, and I have ones and zeroes to juggle!"
+npc_info = ExtResource("9_3i3q5")
