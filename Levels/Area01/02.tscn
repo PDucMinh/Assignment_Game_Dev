@@ -1,0 +1,147 @@
+[gd_scene load_steps=19 format=4 uid="uid://chcb2oelfl72f"]
+
+[ext_resource type="Script" path="res://Levels/scripts/level.gd" id="1_1ohot"]
+[ext_resource type="AudioStream" uid="uid://io7jxqk648xa" path="res://Levels/music/example_music_01.ogg" id="2_5s7x6"]
+[ext_resource type="PackedScene" uid="uid://cq32mohonpsw3" path="res://Tile Maps/grass-tiles-01.tscn" id="3_ukscd"]
+[ext_resource type="PackedScene" uid="uid://dr4blo7ya448q" path="res://Levels/player_spawn.tscn" id="4_1fp1i"]
+[ext_resource type="PackedScene" uid="uid://d4igjv570x7c4" path="res://Props/Plants/plant.tscn" id="5_wa4h8"]
+[ext_resource type="PackedScene" uid="uid://vlpiuopcomwi" path="res://Levels/level_transition.tscn" id="5_xj8mw"]
+[ext_resource type="PackedScene" uid="uid://bi8crg3nv50qw" path="res://npc/npc.tscn" id="7_62xuh"]
+[ext_resource type="PackedScene" uid="uid://dapdr3ojo2pha" path="res://npc/npc_behavior_wander.tscn" id="8_f8c10"]
+[ext_resource type="Resource" uid="uid://csvi3x1wp3gy6" path="res://npc/00_npcs/npc_01.tres" id="8_fbvcf"]
+[ext_resource type="Resource" uid="uid://bqfxxks18ou8u" path="res://npc/00_npcs/npc_02.tres" id="8_yuemd"]
+[ext_resource type="PackedScene" uid="uid://b22o8rtjyby8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="10_s1pmn"]
+[ext_resource type="PackedScene" uid="uid://dpenv0euqqlkg" path="res://npc/npc_behavior_patrol.tscn" id="11_q675y"]
+[ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_text.gd" id="11_ufet7"]
+[ext_resource type="Resource" uid="uid://cdc3sykvmnn27" path="res://npc/00_npcs/00_hero.tres" id="12_2ebyk"]
+[ext_resource type="PackedScene" uid="uid://dyhn3j7qk4dqw" path="res://npc/patrol_location.tscn" id="12_sc27x"]
+[ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_choice.gd" id="16_as0ht"]
+[ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_branch.gd" id="17_lam8a"]
+[ext_resource type="PackedScene" uid="uid://cf0a8hxch6kfd" path="res://Props/pot/pot.tscn" id="18_gcr0t"]
+
+[node name="02" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_1ohot")
+music = ExtResource("2_5s7x6")
+
+[node name="grass-tiles-01" parent="." instance=ExtResource("3_ukscd")]
+tile_map_data = PackedByteArray("AAD9//7/AAACAAQAAAD9////AAACAAUAAAD9/wAAAAACAAYAAAD9/wEAAAANAAQAAAD9/wIAAAANAAUAAAD9/wMAAAANAAUAAAD9/wQAAAANAAUAAAD9/wUAAAANAAUAAAD9/wYAAAANAAUAAAD9/wcAAAANAAUAAAD9/wgAAAANAAUAAAD9/wkAAAANAAUAAAD+//7/AAADAAQAAAD+////AAADAAUAAAD+/wAAAAADAAYAAAD+/wEAAAAOAAQAAAD+/wIAAAAOAAUAAAD+/wMAAAAOAAUAAAD+/wQAAAAOAAUAAAD+/wUAAAAOAAUAAAD+/wYAAAAOAAUAAAD+/wcAAAAOAAUAAAD+/wgAAAAOAAUAAAD+/wkAAAAOAAUAAAD///7/AAAEAAQAAAD/////AAAEAAUAAAD//wAAAAAEAAYAAAD//wEAAAACAAAAAAD//wIAAAACAAAAAAD//wMAAAACAAAAAAD//wQAAAACAAAAAAD//wUAAAACAAAAAAD//wYAAAACAAAAAAD//wcAAAAFAAAAAAD//wgAAAAEAAIAAAD//wkAAAAKAAQAAAAAAP7/AAAEAAQAAAAAAP//AAAEAAUAAAAAAAAAAAAEAAYAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAEAAAAAAAAAAYAAAAFAAEAAAAAAAcAAAAHAAIAAAAAAAgAAAAAAAAAAAAAAAkAAAAMAAQAAAABAP7/AAACAAQAAAABAP//AAACAAUAAAABAAAAAAACAAYAAAABAAEAAAABAAAAAAABAAIAAAABAAAAAAABAAMAAAABAAAAAAABAAQAAAABAAAAAAABAAUAAAABAAAAAAABAAYAAAAHAAMAAAABAAcAAAABAAAAAAABAAgAAAABAAAAAAABAAkAAAANAAQAAAACAP7/AAADAAQAAAACAP//AAADAAUAAAACAAAAAAADAAYAAAACAAEAAAACAAAAAAACAAIAAAACAAAAAAACAAMAAAACAAAAAAACAAQAAAACAAAAAAACAAUAAAACAAAAAAACAAYAAAACAAAAAAACAAcAAAACAAAAAAACAAgAAAACAAAAAAACAAkAAAALAAQAAAADAP7/AAAEAAQAAAADAP//AAAEAAUAAAADAAAAAAAEAAYAAAADAAEAAAADAAAAAAADAAIAAAADAAAAAAADAAMAAAADAAAAAAADAAQAAAAEAAMAAAADAAUAAAADAAAAAAADAAYAAAADAAAAAAADAAcAAAADAAAAAAADAAgAAAADAAAAAAADAAkAAAAMAAQAAAAEAP7/AAACAAQAAAAEAP//AAADAAUAAAAEAAAAAAANAAcAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAAAAAAEAAYAAAAEAAMAAAAEAAcAAAAAAAAAAAAEAAgAAAAAAAAAAAAEAAkAAAANAAQAAAAFAP7/AAAOAAYAAAAFAP//AAAJAAcAAAAFAAAAAAAOAAcAAAAFAAEAAAABAAAAAAAFAAIAAAABAAAAAAAFAAMAAAABAAAAAAAFAAQAAAABAAAAAAAFAAUAAAABAAAAAAAFAAYAAAABAAAAAAAFAAcAAAABAAAAAAAFAAgAAAABAAAAAAAFAAkAAAALAAQAAAAGAP7/AAAMAAAAAAAGAP//AAAMAAEAAAAGAAAAAAAMAAEAAAAGAAEAAAAMAAMAAAAGAAIAAAACAAAAAAAGAAMAAAACAAAAAAAGAAQAAAACAAAAAAAGAAUAAAACAAAAAAAGAAYAAAACAAAAAAAGAAcAAAACAAAAAAAGAAgAAAACAAAAAAAGAAkAAAAMAAQAAAAHAP7/AAAPAAAAAAAHAP//AAAPAAIAAAAHAAAAAAAPAAIAAAAHAAEAAAALAAIAAAAHAAIAAAAEAAEAAAAHAAMAAAAFAAIAAAAHAAQAAAADAAAAAAAHAAUAAAADAAAAAAAHAAYAAAADAAAAAAAHAAcAAAADAAAAAAAHAAgAAAADAAAAAAAHAAkAAAANAAQAAAAIAP7/AAAKAAYAAAAIAP//AAAJAAYAAAAIAAAAAAAKAAcAAAAIAAEAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAHAAAAAAAIAAQAAAAIAAEAAAAIAAUAAAAMAAMAAAAIAAYAAAAAAAAAAAAIAAcAAAAAAAAAAAAIAAgAAAAAAAAAAAAIAAkAAAALAAQAAAAJAP7/AAAEAAQAAAAJAP//AAAEAAUAAAAJAAAAAAALAAcAAAAJAAEAAAABAAAAAAAJAAIAAAABAAAAAAAJAAMAAAABAAAAAAAJAAQAAAAKAAAAAAAJAAUAAAALAAIAAAAJAAYAAAAFAAIAAAAJAAcAAAABAAAAAAAJAAgAAAABAAAAAAAJAAkAAAAMAAQAAAAKAP7/AAACAAQAAAAKAP//AAACAAUAAAAKAAAAAAACAAYAAAAKAAEAAAACAAAAAAAKAAIAAAAFAAMAAAAKAAMAAAACAAAAAAAKAAQAAAAHAAMAAAAKAAUAAAACAAAAAAAKAAYAAAAGAAMAAAAKAAcAAAACAAAAAAAKAAgAAAACAAAAAAAKAAkAAAANAAQAAAALAP7/AAADAAQAAAALAP//AAADAAUAAAALAAAAAAADAAYAAAALAAEAAAADAAAAAAALAAIAAAAGAAMAAAALAAMAAAADAAAAAAALAAQAAAADAAAAAAALAAUAAAADAAAAAAALAAYAAAAGAAMAAAALAAcAAAADAAAAAAALAAgAAAADAAAAAAALAAkAAAALAAQAAAAMAP7/AAAEAAQAAAAMAP//AAAEAAUAAAAMAAAAAAAEAAYAAAAMAAEAAAAAAAAAAAAMAAIAAAAHAAAAAAAMAAMAAAAEAAEAAAAMAAQAAAAEAAIAAAAMAAUAAAAAAAAAAAAMAAYAAAAHAAMAAAAMAAcAAAAAAAAAAAAMAAgAAAAAAAAAAAAMAAkAAAAMAAQAAAANAP7/AAACAAQAAAANAP//AAACAAUAAAANAAAAAAACAAYAAAANAAEAAAABAAAAAAANAAIAAAABAAAAAAANAAMAAAABAAAAAAANAAQAAAABAAAAAAANAAUAAAABAAAAAAANAAYAAAABAAAAAAANAAcAAAABAAAAAAANAAgAAAABAAAAAAANAAkAAAAOAAQAAAAOAP7/AAADAAQAAAAOAP//AAADAAUAAAAOAAAAAAADAAYAAAAOAAEAAAAKAAQAAAAOAAIAAAAKAAUAAAAOAAMAAAAKAAUAAAAOAAQAAAAKAAUAAAAOAAUAAAAKAAUAAAAOAAYAAAAKAAUAAAAOAAcAAAAKAAUAAAAOAAgAAAAKAAUAAAAOAAkAAAAKAAUAAAAPAP7/AAAEAAQAAAAPAP//AAAEAAUAAAAPAAAAAAAEAAYAAAAPAAEAAAALAAQAAAAPAAIAAAALAAUAAAAPAAMAAAALAAUAAAAPAAQAAAALAAUAAAAPAAUAAAALAAUAAAAPAAYAAAALAAUAAAAPAAcAAAALAAUAAAAPAAgAAAALAAUAAAAPAAkAAAALAAUAAAA=")
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("4_1fp1i")]
+position = Vector2(208, 218)
+
+[node name="Plant" parent="." instance=ExtResource("5_wa4h8")]
+position = Vector2(11, 64)
+
+[node name="Plant2" parent="." instance=ExtResource("5_wa4h8")]
+position = Vector2(11, 90)
+
+[node name="Plant3" parent="." instance=ExtResource("5_wa4h8")]
+position = Vector2(11, 116)
+
+[node name="Plant4" parent="." instance=ExtResource("5_wa4h8")]
+position = Vector2(36, 116)
+
+[node name="Plant5" parent="." instance=ExtResource("5_wa4h8")]
+position = Vector2(36, 89)
+
+[node name="Plant6" parent="." instance=ExtResource("5_wa4h8")]
+position = Vector2(36, 64)
+
+[node name="LevelTransition" parent="." instance=ExtResource("5_xj8mw")]
+position = Vector2(224, -64)
+level = "res://Levels/Area01/01.tscn"
+side = 2
+
+[node name="NPC" parent="." instance=ExtResource("7_62xuh")]
+position = Vector2(123.942, 144)
+npc_resource = ExtResource("8_fbvcf")
+
+[node name="NpcBehaviorWander" parent="NPC" instance=ExtResource("8_f8c10")]
+
+[node name="DialogInteraction" parent="NPC" instance=ExtResource("10_s1pmn")]
+
+[node name="DialogText" type="Node" parent="NPC/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "
+Hi, [b]Hero[/b] is that you?"
+npc_info = ExtResource("8_fbvcf")
+
+[node name="DialogText2" type="Node" parent="NPC/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "
+[wave]Heck yeah it's me![/wave]"
+npc_info = ExtResource("12_2ebyk")
+
+[node name="DialogText3" type="Node" parent="NPC/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "Nice bro!
+Happy to have a hero!"
+npc_info = ExtResource("8_fbvcf")
+
+[node name="NPC2" parent="." instance=ExtResource("7_62xuh")]
+position = Vector2(303.941, 144)
+npc_resource = ExtResource("8_yuemd")
+
+[node name="NpcBehaviorPatrol" parent="NPC2" instance=ExtResource("11_q675y")]
+
+[node name="PatrolLocation" parent="NPC2/NpcBehaviorPatrol" instance=ExtResource("12_sc27x")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(64, 0)
+
+[node name="PatrolLocation2" parent="NPC2/NpcBehaviorPatrol" instance=ExtResource("12_sc27x")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(64, 62)
+
+[node name="PatrolLocation3" parent="NPC2/NpcBehaviorPatrol" instance=ExtResource("12_sc27x")]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(-74, 62)
+wait_time = 1.0
+
+[node name="PatrolLocation4" parent="NPC2/NpcBehaviorPatrol" instance=ExtResource("12_sc27x")]
+modulate = Color(0, 1, 1, 1)
+position = Vector2(-74, 0)
+
+[node name="DialogInteraction" parent="NPC2" instance=ExtResource("10_s1pmn")]
+
+[node name="DialogText" type="Node" parent="NPC2/DialogInteraction"]
+script = ExtResource("11_ufet7")
+text = "Yo! Hero! Will you help retreive my
+magical flute from the dark dungeon?
+Please, pretty please?"
+npc_info = ExtResource("8_yuemd")
+
+[node name="DialogChoice" type="Node" parent="NPC2/DialogInteraction"]
+script = ExtResource("16_as0ht")
+npc_info = ExtResource("8_yuemd")
+
+[node name="DialogBranch" type="Node" parent="NPC2/DialogInteraction/DialogChoice"]
+script = ExtResource("17_lam8a")
+text = "You can count on it!"
+npc_info = ExtResource("8_yuemd")
+
+[node name="DialogText" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("11_ufet7")
+text = "Thank you dear hero! You are a true specimen!"
+npc_info = ExtResource("8_yuemd")
+
+[node name="DialogText2" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("11_ufet7")
+text = "Oh, and be careful of the evil wizard who lurks in the dungeon!"
+npc_info = ExtResource("8_yuemd")
+
+[node name="DialogBranch2" type="Node" parent="NPC2/DialogInteraction/DialogChoice"]
+script = ExtResource("17_lam8a")
+text = "NO! You're crazy bananas!"
+npc_info = ExtResource("8_yuemd")
+
+[node name="DialogText" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("11_ufet7")
+text = "Geez! Some lousy hero you are...."
+npc_info = ExtResource("8_yuemd")
+
+[node name="Pot" parent="." instance=ExtResource("18_gcr0t")]
+position = Vector2(144, 210)
+
+[node name="Pot2" parent="." instance=ExtResource("18_gcr0t")]
+position = Vector2(121, 210)
