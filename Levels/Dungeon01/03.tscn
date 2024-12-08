@@ -29,19 +29,13 @@ target_transition_area = "LevelTransition2"
 [node name="EnemyCounter" parent="." instance=ExtResource("5_2e8qq")]
 
 [node name="Slime" parent="EnemyCounter" instance=ExtResource("6_jxipa")]
-position = Vector2(-175, 1081)
+position = Vector2(294, 180)
 
 [node name="Slime2" parent="EnemyCounter" instance=ExtResource("6_jxipa")]
-position = Vector2(-173, 857)
-
-[node name="Slime" parent="EnemyCounter/Slime2" instance=ExtResource("6_jxipa")]
-position = Vector2(947, 389)
-
-[node name="Slime2" parent="EnemyCounter/Slime2" instance=ExtResource("6_jxipa")]
-position = Vector2(1021, 127)
+position = Vector2(296, -44)
 
 [node name="ItemDropper" parent="." instance=ExtResource("7_wt5pl")]
-position = Vector2(-263, 977)
+position = Vector2(206, 76)
 item_data = ExtResource("8_nq3e6")
 
 [node name="Goblin" parent="." instance=ExtResource("10_fo02q")]
