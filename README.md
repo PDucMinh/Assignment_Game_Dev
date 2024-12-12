@@ -1,13 +1,17 @@
-<img src="aarpg-tutorial-icon.png" width="100" />
 
-# 2D Action Adventure RPG Tutorial
+# Start game
+This game is written in Godot 4.3, download before lauching or you will get some version conflict
 
-*Michael Games /// https://www.youtube.com/@MichaelGamesOfficial /// https://michaelgames.itch.io/*
+# Material
+Github link: https://github.com/PDucMinh/assignment_game_dev.git 
 
-Code Repository for the Michael Games Action Adventure RPG Tutorial Series project.
+Report: PDF file attached in this source
 
-This Repository contains the complete project (currently under development) for my YouTube tutorial series.
+# Team members:
+Nguyen Kieu Bao Khanh - Leader
 
-The series covers how to build a top down 2D game that features action, adventure and light RPG mechanics, in Godot 4 using GD Script.
+Pham Duc Minh - coder slave
 
-Tutorial Series Playlist: https://www.youtube.com/playlist?list=PLfcCiyd_V9GH8M9xd_QKlyU8jryGcy3Xa
+Vo Hoang Phuc - document slave
+
+We created this game for assignment sem 241 (2024-2025)

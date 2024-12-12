@@ -55,3 +55,7 @@ func _update_texture() -> void:
 	if Engine.is_editor_hint() == true:
 		if item_data and sprite:
 			sprite.texture = item_data.texture
+
+
+func _on_enemy_counter_enemies_defeated() -> void:
+	pass # Replace with function body.
